@@ -2,6 +2,7 @@ var Botkit = require('botkit');
 var redis = require('botkit/lib/storage/redis_storage');
 var http = require('http');
 var url = require('url');
+var CronJob = require('cron').CronJob;
 
 var redisURL = url.parse(process.env.REDISCLOUD_URL);
 var redisStorage = redis({
@@ -46,6 +47,13 @@ controller.hears(['what is my name','who am i'],'direct_message,direct_mention,m
         }
     });
 });
+
+new CronJob('0 0 10 * * 1-5', function(){
+  bot.say({
+    text:"おはようございます！",
+    channel:"#room"
+  });
+}, null, true, 'Asia/Tokyo');
 
 // To keep Heroku's free dyno awake
 http.createServer(function(request, response) {
