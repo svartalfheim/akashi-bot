@@ -12,6 +12,7 @@ var redisStorage = redis({
 });
 
 var controller = Botkit.slackbot({
+    debug: true,
     storage: redisStorage
 });
 
