@@ -3,6 +3,7 @@ var redis = require('botkit/lib/storage/redis_storage');
 var http = require('http');
 var url = require('url');
 var CronJob = require('cron').CronJob;
+var request = require('request');
 
 var redisURL = url.parse(process.env.REDISCLOUD_URL);
 var redisStorage = redis({
@@ -21,38 +22,32 @@ var bot = controller.spawn({
     token: process.env.SLACK_TOKEN
 }).startRTM();
 
-controller.hears(['call me (.*)'],'direct_message,direct_mention,mention',function(bot, message) {
-    var matches = message.text.match(/call me (.*)/i);
-    var name = matches[1];
-    controller.storage.users.get(message.user,function(err, user) {
-        if (!user) {
-            user = {
-                id: message.user,
-            };
-        }
-        user.name = name;
-        controller.storage.users.save(user,function(err, id) {
-            bot.reply(message,'Got it. I will call you ' + user.name + ' from now on.');
-        });
-    });
-});
-
-controller.hears(['what is my name','who am i'],'direct_message,direct_mention,mention',function(bot, message) {
-
-    controller.storage.users.get(message.user,function(err, user) {
-        if (user && user.name) {
-            bot.reply(message,'Your name is ' + user.name);
-        } else {
-            bot.reply(message,'I don\'t know yet!');
-        }
-    });
-});
-
-new CronJob('0 0 10 * * 1-5', function(){
+var morningGreeting = function(){
   bot.say({
     text:"おはようございます！",
     channel:"#room"
   });
+};
+
+var weather = function(){
+  request('http://weather.livedoor.com/forecast/webservice/json/v1?city=130010', function (error, response, body){
+    if (!error && response.statusCode == 200) {
+      var json = JSON.parse(body);
+      var today = json.forecasts[0];
+      bot.say({
+        text:""+today.telop+" "+today.temperature.max+"/"+today.temperature.min,
+        channel: "#room"
+      });
+    }
+  });
+};
+
+controller.hears(['今日の天気は？'],'direct_message,direct_mention,mention',function(bot, message) {
+  weather();
+});
+
+new CronJob('0 0 10 * * 1-5', function(){
+  morningGreeting();
 }, null, true, 'Asia/Tokyo');
 
 // To keep Heroku's free dyno awake
