@@ -13,6 +13,7 @@ var redisStorage = redis({
     auth_pass: redisURL.auth.split(":")[1]
 });
 
+
 var controller = Botkit.slackbot({
     debug: true,
     storage: redisStorage
@@ -25,7 +26,7 @@ var bot = controller.spawn({
 var morningGreeting = function(){
   bot.say({
     text:"おはようございます！",
-    channel:"#room"
+    channel:"C0EA7KEMV"
   });
 };
 
@@ -35,8 +36,8 @@ var weather = function(){
       var json = JSON.parse(body);
       var today = json.forecasts[0];
       bot.say({
-        text:""+today.telop+" "+today.temperature.max+"/"+today.temperature.min,
-        channel: "#room"
+        text:"今日の天気は"+today.telop+" 最高気温:"+today.temperature.max+"/最低気温:"+today.temperature.min+" ですよ",
+        channel: "C0EA7KEMV"
       });
     }
   });
