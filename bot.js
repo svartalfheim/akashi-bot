@@ -87,6 +87,7 @@ controller.hears(['山手線は？'],'direct_message,direct_mention,mention',fun
 new CronJob('0 0 9 * * 1-5', function(){
   sayMorningGreeting();
   sayTodayWeather();
+  sayTrainInfo();
 }, null, true, 'Asia/Tokyo');
 
 
