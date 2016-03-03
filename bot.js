@@ -36,8 +36,19 @@ var sayTodayWeather = function(){
     if (!error && response.statusCode == 200) {
       var json = JSON.parse(body);
       var today = json.forecasts[0];
+
+      var maxTemp = '-';
+      if(today.temperature.max){
+        maxTemp = today.temperature.max.celsius;
+      }
+
+      var minTemp = '-';
+      if(today.temperature.min){
+        maxTemp = today.temperature.min.celsius;
+      }
+
       bot.say({
-        text:"今日の天気は"+today.telop+" 最高気温:"+(today.temperature.max.celsius || '-')+"/最低気温:"+(today.temperature.min.celsius || '-')+" ですよ",
+        text:"今日の天気は"+today.telop+" 最高気温:"+maxTemp+"/最低気温:"+maxTemp+" ですよ",
         channel: ROOM_CHANNEL_ID
       });
     }
