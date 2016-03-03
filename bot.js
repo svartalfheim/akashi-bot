@@ -4,6 +4,7 @@ var http = require('http');
 var url = require('url');
 var CronJob = require('cron').CronJob;
 var request = require('request');
+var cheerio = require('cheerio'),
 
 var redisURL = url.parse(process.env.REDISCLOUD_URL);
 var redisStorage = redis({
@@ -51,6 +52,26 @@ var sayTodayWeather = function(){
         text:"今日の天気は"+today.telop+" 最高気温:"+maxTemp+"/最低気温:"+maxTemp+" ですよ",
         channel: ROOM_CHANNEL_ID
       });
+    }else{
+      console.log(error);
+    }
+  });
+};
+
+var sayTrainInfo = function(){
+  request('http://traininfo.jreast.co.jp/train_info/kanto.aspx',function(error, response, body){
+    if (!error && response.statusCode == 200) {
+      var $ = cheerio.load(body);
+      var container = $("#direction_yamate");
+      var lineName = $(container).find("th").text();
+      var state = $(container).find("img").attr("alt");
+
+      bot.say({
+        text:lineName+"は"+state+"みたいですよ？",
+        channel: ROOM_CHANNEL_ID
+      });
+    }else{
+      console.log(error);
     }
   });
 };
