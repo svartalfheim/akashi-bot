@@ -4,7 +4,7 @@ var http = require('http');
 var url = require('url');
 var CronJob = require('cron').CronJob;
 var request = require('request');
-var cheerio = require('cheerio'),
+var cheerio = require('cheerio');
 
 var redisURL = url.parse(process.env.REDISCLOUD_URL);
 var redisStorage = redis({
@@ -78,6 +78,10 @@ var sayTrainInfo = function(){
 
 controller.hears(['今日の天気は？'],'direct_message,direct_mention,mention',function(bot, message) {
   sayTodayWeather();
+});
+
+controller.hears(['山手線は？'],'direct_message,direct_mention,mention',function(bot, message) {
+  sayTrainInfo();
 });
 
 new CronJob('0 0 8 * * 1-5', function(){
