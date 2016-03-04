@@ -45,11 +45,11 @@ var sayTodayWeather = function(){
 
       var minTemp = '-';
       if(today.temperature.min){
-        maxTemp = today.temperature.min.celsius;
+        minTemp = today.temperature.min.celsius;
       }
 
       bot.say({
-        text:"今日の天気は"+today.telop+" 最高気温:"+maxTemp+"/最低気温:"+maxTemp+" ですよ",
+        text:"今日の天気は"+today.telop+" 最高気温:"+maxTemp+"/最低気温:"+minTemp+" ですよ",
         channel: ROOM_CHANNEL_ID
       });
     }else{
