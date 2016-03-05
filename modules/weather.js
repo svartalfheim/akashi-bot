@@ -45,7 +45,7 @@ module.exports = {
     });
   },
   sayTokyo:function(bot){
-    weather.get(weather.CITY.TOKYO,function(forecasts){
+    this.get(weather.CITY.TOKYO,function(forecasts){
       var today = forecasts[0];
       bot.say({
         text:'今日の天気は'+today.telop+' 最高気温:'+maxTemp+'/最低気温:'+minTemp+' ですよ',
