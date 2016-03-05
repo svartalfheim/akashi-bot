@@ -5,7 +5,7 @@ var cheerio = require('cheerio');
 
 module.exports = {
 
-  fetchHtml:function(bot,url,callback,parser){
+  fetchHtml:function(bot,url,parser){
     // parser function
     // @return {lineName:"aaa",state:"bbb"}
     request(url,function(error,response,body){
