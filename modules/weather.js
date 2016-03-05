@@ -26,12 +26,13 @@ module.exports = {
   get:function(cityId,complete,error){
     if (!cityId) throw new Error('required argument cityId'); return;
 
+    var self = this;
     request('http://weather.livedoor.com/forecast/webservice/json/v1?city='+cityId, function (error, response, body){
       if (response.statusCode == 200) {
         var json = JSON.parse(body);
         var weathers = [];
         for(var i=0;i<json.forecasts.length;i++){
-          weathers.push(parse(json.forecasts[i]));
+          weathers.push(self.parse(json.forecasts[i]));
         }
         if(complete && typeof complete === 'function') complete(weathers);
       }else{

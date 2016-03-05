@@ -23,7 +23,7 @@ module.exports = {
     });
   },
   sayYamanoteInfo:function(bot){
-    fetchHtml(bot,
+    this.fetchHtml(bot,
       'http://traininfo.jreast.co.jp/train_info/kanto.aspx',
       function($){
         var container = $("#direction_yamate");
@@ -37,7 +37,7 @@ module.exports = {
       });
   },
   sayTozaiInfo:function(bot){
-    fetchHtml(bot,
+    this.fetchHtml(bot,
       'http://www.tokyometro.jp/unkou/index.html',
       function($){
         var tr = $(".dataTable").find("tr")[4];
