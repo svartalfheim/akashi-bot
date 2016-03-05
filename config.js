@@ -1,10 +1,10 @@
 'use strict';
 
 module.exports = function(){
-  var Config = {
+  var config = {
     CHANNEL_ID:{
-      ROOM_:"C0EA7KEMV"
-    },
+      ROOM:"C0EA7KEMV"
+    }
   };
-  return Config;
+  return config;
 };
