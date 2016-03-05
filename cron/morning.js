@@ -1,6 +1,6 @@
 'use strict'
 
-var config = require('./config');
+var config = require('../config');
 var CronJob = require('cron').CronJob;
 var weather = require('../modules/weather');
 var train = require('../modules/train');

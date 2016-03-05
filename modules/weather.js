@@ -1,6 +1,6 @@
 'use strict'
 
-var config = require('./config');
+var config = require('../config');
 var request = require('request');
 
 module.exports = function(controller,bot){

@@ -1,5 +1,5 @@
 'use strict';
-var config = require('./config');
+var config = require('../config');
 var weather = require('../modules/weather');
 
 module.exports = function(controller,bot){

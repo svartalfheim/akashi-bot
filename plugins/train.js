@@ -1,7 +1,7 @@
 'use strict'
 
 var train = require('../modules/train');
-var config = require('./config');
+var config = require('../config');
 
 module.exports = function(controller,bot){
 
