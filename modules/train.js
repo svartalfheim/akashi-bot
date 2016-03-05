@@ -3,13 +3,11 @@
 var request = require('request');
 var cheerio = require('cheerio');
 
-module.exports = function(){
+module.exports = {
 
-  var train = {};
-
-  // parser function
-  // @return {lineName:"aaa",state:"bbb"}
-  var fetchHtml = function(bot,url,callback,parser){
+  fetchHtml:function(bot,url,callback,parser){
+    // parser function
+    // @return {lineName:"aaa",state:"bbb"}
     request(url,function(error,response,body){
       if (!error && response.statusCode == 200) {
         var $ = cheerio.load(body);
@@ -23,9 +21,8 @@ module.exports = function(){
         console.log(error);
       }
     });
-  };
-
-  train.sayYamanoteInfo = function(bot){
+  },
+  sayYamanoteInfo:function(bot){
     fetchHtml(bot,
       'http://traininfo.jreast.co.jp/train_info/kanto.aspx',
       function($){
@@ -38,9 +35,8 @@ module.exports = function(){
           state:state
         }
       });
-  }
-
-  train.sayTozaiInfo = function(bot){
+  },
+  sayTozaiInfo:function(bot){
     fetchHtml(bot,
       'http://www.tokyometro.jp/unkou/index.html',
       function($){
@@ -55,6 +51,4 @@ module.exports = function(){
         }
       });
   }
-
-  return train;
 }
