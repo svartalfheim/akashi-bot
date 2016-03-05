@@ -42,7 +42,7 @@ module.exports = function(controller,bot){
             console.log(error);
           }
         }
-      }
+      });
     },
     sayTokyo:function(bot){
       weather.get(weather.CITY.TOKYO,function(forecasts){
