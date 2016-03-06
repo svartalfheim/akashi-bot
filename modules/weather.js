@@ -34,6 +34,8 @@ module.exports = {
         for(var i=0;i<json.forecasts.length;i++){
           weathers.push(self.parse(json.forecasts[i]));
         }
+        console.log(complete);
+        console.log(weathers);
         if(complete && typeof complete === 'function') complete(weathers);
       }else{
         if(error && typeof error === 'function'){
@@ -45,12 +47,13 @@ module.exports = {
     });
   },
   sayTokyo:function(bot){
-    this.get(this.CITY.TOKYO,function(forecasts){
-      var today = forecasts[0];
-      bot.say({
-        text:'今日の天気は'+today.telop+' 最高気温:'+maxTemp+'/最低気温:'+minTemp+' ですよ',
-        channel: config.CHANNEL_ID.ROOM
-      });
-    })
+    this.get(this.CITY.TOKYO,
+      function(forecasts){
+        var today = forecasts[0];
+        bot.say({
+          text:'今日の天気は'+today.telop+' 最高気温:'+maxTemp+'/最低気温:'+minTemp+' ですよ',
+          channel: config.CHANNEL_ID.ROOM
+        });
+      })
   }
 }
