@@ -14,7 +14,8 @@ module.exports = {
     var arsenals = [];
     var weekday = new Date().getDay();
 
-    _.forEach(json,function(arsenal){
+    _.forEach(json.refurbishments,function(arsenal){
+
       var ships = [];
       _.forEach(arsenal.second_ships,function(ship){
         if(_.indexOf(ship.weekdays,weekday) != -1){
