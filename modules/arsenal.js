@@ -1,12 +1,15 @@
 'use strict'
 
 var fs = require("fs");
+var path = require("path");
 var _ = require("lodash");
 var config = require('../config');
 
+var filePath = path.join(__dirname, "../assets/arsenal.json");
+
 module.exports = {
   fetch:function(callback){
-    var data = fs.readFileSync("../assets/arsenal.json");
+    var data = fs.readFileSync(filePath);
     var json = JSON.parse(data);
     var arsenals = [];
     var weekday = new Date().getDay();
