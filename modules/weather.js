@@ -24,11 +24,11 @@ module.exports = {
     }
   },
   get:function(cityId,complete,error){
-    console.log("get");
     if (!cityId) throw new Error('required argument cityId'); return;
 
     var self = this;
     request('http://weather.livedoor.com/forecast/webservice/json/v1?city='+cityId, function (error, response, body){
+      console.log(response);
       if (response.statusCode == 200) {
         var json = JSON.parse(body);
         var weathers = [];
