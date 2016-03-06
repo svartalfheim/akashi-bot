@@ -36,14 +36,18 @@ module.exports = {
   sayTodayArsenal:function(bot){
     this.fetch(function(arsenals){
       var text = '今日の改修は\n';
-      _.forEach(arsenals,function(arsenal){
-        text += arsenal.name + ' 二番艦(';
-        _.forEach(arsenal.second_ships,function(ship){
-          text += ship.name + ' ';
+      if(arsenals.length > 0){
+        _.forEach(arsenals,function(arsenal){
+          text += arsenal.name + ' 二番艦(';
+          _.forEach(arsenal.second_ships,function(ship){
+            text += ship.name + ' ';
+          });
+          text += ')\n';
         });
-        text += ')\n';
-      });
-      text += 'ですね！';
+        text += 'ですね！';
+      }else{
+        text += '特にないですね...'
+      }
 
       bot.say({
         text:text,
