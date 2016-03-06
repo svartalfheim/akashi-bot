@@ -25,16 +25,13 @@ module.exports = {
   },
   get:function(cityId,complete,error){
     var self = this;
-    console.log(cityId);
     request('http://weather.livedoor.com/forecast/webservice/json/v1?city='+cityId, function (error, response, body){
-      console.log(response);
       if (response.statusCode == 200) {
         var json = JSON.parse(body);
         var weathers = [];
         for(var i=0;i<json.forecasts.length;i++){
           weathers.push(self.parse(json.forecasts[i]));
         }
-        console.log(complete);
         if(complete && typeof complete === 'function') complete(weathers);
       }else{
         if(error && typeof error === 'function'){
@@ -48,10 +45,9 @@ module.exports = {
   sayTokyo:function(bot){
     this.get(this.CITY.TOKYO,
       function(forecasts){
-        console.log(forecasts);
         var today = forecasts[0];
         bot.say({
-          text:'今日の天気は'+today.telop+' 最高気温:'+maxTemp+'/最低気温:'+minTemp+' ですよ',
+          text:'今日の天気は'+today.telop+' 最高気温:'+today.maxTemp+'/最低気温:'+today.minTemp+' ですよ',
           channel: config.CHANNEL_ID.ROOM
         });
       })
