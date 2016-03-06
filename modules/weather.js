@@ -24,6 +24,7 @@ module.exports = {
     }
   },
   get:function(cityId,complete,error){
+    console.log("get");
     if (!cityId) throw new Error('required argument cityId'); return;
 
     var self = this;
@@ -35,7 +36,6 @@ module.exports = {
           weathers.push(self.parse(json.forecasts[i]));
         }
         console.log(complete);
-        console.log(weathers);
         if(complete && typeof complete === 'function') complete(weathers);
       }else{
         if(error && typeof error === 'function'){
@@ -49,6 +49,7 @@ module.exports = {
   sayTokyo:function(bot){
     this.get(this.CITY.TOKYO,
       function(forecasts){
+        console.log(forecasts);
         var today = forecasts[0];
         bot.say({
           text:'今日の天気は'+today.telop+' 最高気温:'+maxTemp+'/最低気温:'+minTemp+' ですよ',
