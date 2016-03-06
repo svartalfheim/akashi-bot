@@ -31,17 +31,15 @@ module.exports = {
   },
   sayTodayArsenal:function(bot){
     this.fetch(function(arsenals){
-      arsenal.fetch(function(arsenals){
-        var text = '今日の改修は\n';
-        _.forEach(arsenals,function(arsenal){
-          text += arsenal.name + ' 二番艦(';
-          _.forEach(arsenal.second_ships,function(ship){
-            text += ship.name + ' ';
-          });
-          text += ')\n';
+      var text = '今日の改修は\n';
+      _.forEach(arsenals,function(arsenal){
+        text += arsenal.name + ' 二番艦(';
+        _.forEach(arsenal.second_ships,function(ship){
+          text += ship.name + ' ';
         });
-        text += 'ですね！';
+        text += ')\n';
       });
+      text += 'ですね！';
 
       bot.say({
         text:text,
