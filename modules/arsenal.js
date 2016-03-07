@@ -38,9 +38,12 @@ module.exports = {
       var text = '今日の改修は\n';
       if(arsenals.length > 0){
         _.forEach(arsenals,function(arsenal){
-          text += arsenal.name + ' 二番艦(';
+          text += arsenal.name + ' (';
+          var flag = false;
           _.forEach(arsenal.second_ships,function(ship){
-            text += ship.name + ' ';
+            if(flag) text += ' ';
+            text += ship.name;
+            if(!flag) flag = true;
           });
           text += ')\n';
         });
@@ -48,6 +51,7 @@ module.exports = {
       }else{
         text += '特にないですね...'
       }
+
 
       bot.say({
         text:text,
