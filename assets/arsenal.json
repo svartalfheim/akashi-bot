@@ -3,6 +3,7 @@
 
     {
       "name":"12.7cm連装砲",
+			"priority":-1,
       "second_ships":[
         {
           "name":"-",
@@ -12,7 +13,8 @@
     },
     {
       "name":"12.7cm連装砲B型改二",
-      "second_ships":[
+			"priority":0,
+			"second_ships":[
         {
           "name":"夕立改二",
           "weekdays":[1,2,3]
@@ -25,6 +27,7 @@
     },
     {
       "name":"10cm高角砲＋高射装置",
+			"priority":1,
       "second_ships":[
         {
           "name":"秋月",
@@ -38,6 +41,7 @@
     },
     {
       "name":"14cm単装砲",
+			"priority":-1,
       "second_ships":[
         {
           "name":"-",
@@ -47,6 +51,7 @@
     },
     {
       "name":"14cm連装砲",
+			"priority":0,
       "second_ships":[
         {
           "name":"夕張",
@@ -56,6 +61,7 @@
     },
     {
       "name":"15.2cm連装砲",
+			"priority":0,
       "second_ships":[
         {
           "name":"阿賀野",
@@ -73,6 +79,7 @@
     },
     {
       "name":"15.2cm連装砲改",
+			"priority":1,
       "second_ships":[
         {
           "name":"矢矧",
@@ -86,6 +93,7 @@
     },
     {
       "name":"15.5cm三連装砲",
+			"priority":0,
       "second_ships":[
         {
           "name":"最上",
@@ -99,6 +107,7 @@
     },
     {
       "name":"20.3cm連装砲",
+			"priority":0,
       "second_ships":[
         {
           "name":"青葉",
@@ -112,6 +121,7 @@
     },
     {
       "name":"20.3cm(2号)連装砲",
+			"priority":1,
       "second_ships":[
         {
           "name":"妙高",
@@ -121,6 +131,7 @@
     },
     {
       "name":"20.3cm(3号)連装砲",
+			"priority":1,
       "second_ships":[
         {
           "name":"三隈",
@@ -130,6 +141,7 @@
     },
     {
       "name":"35.6cm連装砲",
+			"priority":0,
       "second_ships":[
         {
           "name":"扶桑",
@@ -139,6 +151,7 @@
     },
     {
       "name":"試製35.6cm三連装砲",
+			"priority":1,
       "second_ships":[
         {
           "name":"金剛改二",
@@ -160,6 +173,7 @@
     },
     {
       "name":"35.6cm連装砲(ダズル迷彩)",
+			"priority":0,
       "second_ships":[
         {
           "name":"榛名改二",
@@ -169,6 +183,7 @@
     },
     {
       "name":"38cm連装砲",
+			"priority":0,
       "second_ships":[
         {
           "name":"Bismarck",
@@ -178,6 +193,7 @@
     },
     {
       "name":"38cm連装砲改",
+			"priority":1,
       "second_ships":[
         {
           "name":"Bismarck",
@@ -187,6 +203,7 @@
     },
     {
       "name":"381mm/50 三連装砲",
+			"priority":0,
       "second_ships":[
         {
           "name":"Littorio",
@@ -200,6 +217,7 @@
     },
     {
       "name":"381mm/50 三連装砲改",
+			"priority":0,
       "second_ships":[
         {
           "name":"Littorio",
@@ -213,6 +231,7 @@
     },
     {
       "name":"41cm連装砲",
+			"priority":0,
       "second_ships":[
         {
           "name":"長門",
@@ -226,6 +245,7 @@
     },
     {
       "name":"試製41cm三連装砲",
+			"priority":0,
       "second_ships":[
         {
           "name":"長門改",
@@ -239,6 +259,7 @@
     },
     {
       "name":"試製46cm連装砲",
+			"priority":0,
       "second_ships":[
         {
           "name":"大和",
@@ -252,6 +273,7 @@
     },
     {
       "name":"46cm三連装砲",
+			"priority":0,
       "second_ships":[
         {
           "name":"大和",
@@ -265,6 +287,7 @@
     },
     {
       "name":"試製51cm連装砲",
+			"priority":0,
       "second_ships":[
         {
           "name":"大和改",
@@ -278,6 +301,7 @@
     },
     {
       "name":"90mm単装高角砲",
+			"priority":0,
       "second_ships":[
         {
           "name":"Littorio",
@@ -291,6 +315,7 @@
     },
     {
       "name":"15.2cm単装砲",
+			"priority":0,
       "second_ships":[
         {
           "name":"阿賀野",
@@ -308,6 +333,7 @@
     },
     {
       "name":"OTO 152mm三連装速射砲",
+			"priority":1,
       "second_ships":[
         {
           "name":"Littorio",
@@ -321,6 +347,7 @@
     },
     {
       "name":"61cm三連装魚雷",
+			"priority":0,
       "second_ships":[
         {
           "name":"吹雪",
@@ -334,6 +361,7 @@
     },
     {
       "name":"61cm三連装(酸素)魚雷",
+			"priority":0,
       "second_ships":[
         {
           "name":"吹雪改二",
@@ -343,6 +371,7 @@
     },
     {
       "name":"61cm四連装魚雷",
+			"priority":0,
       "second_ships":[
         {
           "name":"-",
@@ -352,6 +381,7 @@
     },
     {
       "name":"61cm四連装(酸素)魚雷",
+			"priority":0,
       "second_ships":[
         {
           "name":"大井",
@@ -365,6 +395,7 @@
     },
     {
       "name":"61cm五連装(酸素)魚雷",
+			"priority":1,
       "second_ships":[
         {
           "name":"島風",
@@ -374,6 +405,7 @@
     },
     {
       "name":"零式水上観測機",
+			"priority":0,
       "second_ships":[
         {
           "name":"瑞穂",
@@ -387,6 +419,7 @@
     },
     {
       "name":"Ro.43水偵",
+			"priority":0,
       "second_ships":[
         {
           "name":"Zara改",
@@ -404,6 +437,7 @@
     },
     {
       "name":"13号対空電探",
+			"priority":0,
       "second_ships":[
         {
           "name":"時雨改二",
@@ -425,6 +459,7 @@
     },
     {
       "name":"13号対空電探改",
+			"priority":0,
       "second_ships":[
         {
           "name":"磯風改",
@@ -442,6 +477,7 @@
     },
     {
       "name":"22号対水上電探",
+			"priority":0,
       "second_ships":[
         {
           "name":"日向",
@@ -459,6 +495,7 @@
     },
     {
       "name":"22号対水上電探改四",
+			"priority":0,
       "second_ships":[
         {
           "name":"妙高改二",
@@ -476,6 +513,7 @@
     },
     {
       "name":"21号対空電探",
+			"priority":0,
       "second_ships":[
         {
           "name":"伊勢",
@@ -489,6 +527,7 @@
     },
     {
       "name":"21号対空電探",
+			"priority":0,
       "second_ships":[
         {
           "name":"大和",
@@ -502,6 +541,7 @@
     },
     {
       "name":"32号対水上電探",
+			"priority":0,
       "second_ships":[
         {
           "name":"伊勢",
@@ -515,6 +555,7 @@
     },
     {
       "name":"32号対水上電探改",
+			"priority":0,
       "second_ships":[
         {
           "name":"伊勢",
@@ -528,6 +569,7 @@
     },
     {
       "name":"九三式水中聴音機（三式水中探信儀）",
+			"priority":1,
       "second_ships":[
         {
           "name":"夕張",
@@ -541,6 +583,7 @@
     },
     {
       "name":"九三式水中聴音機（四式水中聴音機）",
+			"priority":1,
       "second_ships":[
         {
           "name":"時雨改二",
@@ -558,6 +601,7 @@
     },
     {
       "name":"三式水中探信儀",
+			"priority":1,
       "second_ships":[
         {
           "name":"夕張",
@@ -571,6 +615,7 @@
     },
     {
       "name":"四式水中聴音機",
+			"priority":1,
       "second_ships":[
         {
           "name":"五十鈴改二",
@@ -592,6 +637,7 @@
     },
     {
       "name":"九四式爆雷投射機",
+			"priority":1,
       "second_ships":[
         {
           "name":"-",
@@ -601,6 +647,7 @@
     },
     {
       "name":"三式爆雷投射機",
+			"priority":1,
       "second_ships":[
         {
           "name":"五十鈴改二",
@@ -610,6 +657,7 @@
     },
     {
       "name":"九一式徹甲弾",
+			"priority":1,
       "second_ships":[
         {
           "name":"比叡",
@@ -623,6 +671,7 @@
     },
     {
       "name":"一式徹甲弾",
+			"priority":1,
       "second_ships":[
         {
           "name":"金剛",
@@ -636,6 +685,7 @@
     },
     {
       "name":"25mm連装機銃",
+			"priority":0,
       "second_ships":[
         {
           "name":"五十鈴改二",
@@ -645,6 +695,7 @@
     },
     {
       "name":"25mm三連装機銃",
+			"priority":0,
       "second_ships":[
         {
           "name":"五十鈴改二",
@@ -662,6 +713,7 @@
     },
     {
       "name":"91式高射装置",
+			"priority":0,
       "second_ships":[
         {
           "name":"摩耶",
@@ -679,6 +731,7 @@
     },
     {
       "name":"94式高射装置（10cm高角砲＋高射装置）",
+			"priority":0,
       "second_ships":[
         {
           "name":"秋月",
@@ -696,6 +749,7 @@
     },
     {
       "name":"94式高射装置（12.7cm高角砲＋高射装置）",
+			"priority":0,
       "second_ships":[
         {
           "name":"摩耶改二",
@@ -705,6 +759,7 @@
     },
     {
       "name":"探照灯",
+			"priority":0,
       "second_ships":[
         {
           "name":"暁",
@@ -726,6 +781,7 @@
     },
     {
       "name":"96式150cm探照灯",
+			"priority":0,
       "second_ships":[
         {
           "name":"比叡",

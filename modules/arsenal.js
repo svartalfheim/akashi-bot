@@ -8,13 +8,20 @@ var config = require('../config');
 var filePath = path.join(__dirname, "../assets/arsenal.json");
 
 module.exports = {
-  fetch:function(callback){
+  PRIORITY:{
+    LOW:-1,
+    DEFAULT:0,
+    HIGH:1
+  },
+  fetch:function(priority,callback){
+    priority = (priority || this.PRIORITY.DEFAULT)
     var data = fs.readFileSync(filePath);
     var json = JSON.parse(data);
     var arsenals = [];
     var weekday = new Date().getDay();
 
     _.forEach(json.refurbishments,function(arsenal){
+      if(priority <= arsenal.priority) return;
 
       var ships = [];
       _.forEach(arsenal.second_ships,function(ship){
@@ -33,8 +40,9 @@ module.exports = {
 
     callback(arsenals);
   },
-  sayTodayArsenal:function(bot){
-    this.fetch(function(arsenals){
+  sayTodayArsenal:function(bot,priority){
+    this.fetch(priority,
+      function(arsenals){
       var text = '今日の改修は\n';
       if(arsenals.length > 0){
         _.forEach(arsenals,function(arsenal){
