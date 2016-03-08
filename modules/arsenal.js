@@ -14,7 +14,7 @@ module.exports = {
     HIGH:1
   },
   fetch:function(priority,callback){
-    priority = (priority || this.PRIORITY.DEFAULT)
+    if(!priority) priority = this.PRIORITY.DEFAULT;
     var data = fs.readFileSync(filePath);
     var json = JSON.parse(data);
     var arsenals = [];
