@@ -14,7 +14,7 @@ module.exports = function(controller,bot){
     ];
 
     bot.say({
-      text:random(menus)+'とかどうですか？'
+      text:random(menus)+'とかどうですか？',
       channel:config.CHANNEL_ID.ROOM
     });
   });
