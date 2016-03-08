@@ -21,7 +21,7 @@ module.exports = {
     var weekday = new Date().getDay();
 
     _.forEach(json.refurbishments,function(arsenal){
-      if(priority <= arsenal.priority) return;
+      if(priority > arsenal.priority) return;
 
       var ships = [];
       _.forEach(arsenal.second_ships,function(ship){
