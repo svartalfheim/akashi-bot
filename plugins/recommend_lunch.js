@@ -7,7 +7,7 @@ module.exports = function(controller,bot){
     return items[Math.floor(Math.random() * items.length)];
   };
 
-  controller.hears(['お(腹|なか)(す|空)いた'],['message_received'],function(bot,message) {
+  controller.hears(['お(腹|なか)(す|空)いた'],['direct_message', 'ambient'],function(bot,message) {
     console.log('you are hungry');
     var menus = [
       "カレー","そば","うどん","ステーキ","パスタ","寿司","中華","ラーメン","とんかつ",
