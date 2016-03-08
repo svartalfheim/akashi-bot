@@ -569,7 +569,7 @@
     },
     {
       "name":"九三式水中聴音機（三式水中探信儀）",
-			"priority":1,
+			"priority":0,
       "second_ships":[
         {
           "name":"夕張",
@@ -583,7 +583,7 @@
     },
     {
       "name":"九三式水中聴音機（四式水中聴音機）",
-			"priority":1,
+			"priority":0,
       "second_ships":[
         {
           "name":"時雨改二",
@@ -637,7 +637,7 @@
     },
     {
       "name":"九四式爆雷投射機",
-			"priority":1,
+			"priority":0,
       "second_ships":[
         {
           "name":"-",
