@@ -28,8 +28,8 @@ function loadAssets(dirnames){
     const dirPath = path.resolve(__dirname, dir);
     fs.readdir(dirPath, (err, list) => {
         for (const file of list) {
-            const assetsPath = path.resolve(path, file);
-            require(assetsPath)(controller,bot);
+            const assetPath = path.resolve(dirPath, file);
+            require(assetPath)(controller,bot);
         }
     });
   }
