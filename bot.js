@@ -23,13 +23,19 @@ var bot = controller.spawn({
     token: process.env.SLACK_TOKEN
 }).startRTM();
 
-const pluginsPath = path.resolve(__dirname, 'plugins');
-fs.readdir(pluginsPath, (err, list) => {
-    for (const file of list) {
-        const pluginPath = path.resolve(pluginsPath, file);
-        require(pluginPath)(controller,bot);
-    }
-});
+function loadAssets(dirnames){
+  for (const dir of dirnames){
+    var path = path.resolve(__dirname, dir);
+    fs.readdir(path, (err, list) => {
+        for (const file of list) {
+            const assetsPath = path.resolve(path, file);
+            require(assetsPath)(controller,bot);
+        }
+    });
+  }
+}
+
+loadAssets(['plugins','crons']);
 
 // To keep Heroku's free dyno awake
 http.createServer(function(request, response) {
