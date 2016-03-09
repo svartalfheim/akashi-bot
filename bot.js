@@ -25,8 +25,8 @@ var bot = controller.spawn({
 
 function loadAssets(dirnames){
   for (const dir of dirnames){
-    var path = path.resolve(__dirname, dir);
-    fs.readdir(path, (err, list) => {
+    const dirPath = path.resolve(__dirname, dir);
+    fs.readdir(dirPath, (err, list) => {
         for (const file of list) {
             const assetsPath = path.resolve(path, file);
             require(assetsPath)(controller,bot);
