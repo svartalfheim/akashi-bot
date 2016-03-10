@@ -63,8 +63,11 @@ module.exports = function(controller,bot){
   controller.hears(['([0-9\u0430-\u044F\u0410-\u042F ]+)'],['direct_message','direct_mention','mention'],function(bot,message){
     var matches = message.text.match(/([0-9\u0430-\u044F\u0410-\u042F ]+)/i);
     var str = matches[1];
+    console.log(str);
     getAccessToken(function (token) {
+      console.log(token)
       translate(token, str, function (translated) {
+        console.log(translated);
         bot.reply(message,'「'+translated+'」って言ってるみたいですよ？');
       });
     });
