@@ -17,7 +17,6 @@ function getAccessToken(callback) {
             body += chunk;
         }).on('end', function () {
             var resData = JSON.parse(body);
-            console.log(resData);
             callback(resData.access_token);
         });
     }).on('error', function (err) {
@@ -47,6 +46,7 @@ function translate(token, text, callback) {
         res.on('data', function (chunk) {
             body += chunk;
         }).on('end', function () {
+            console.log(body);
             eval(body);
         });
     }).on('error', function (err) {
@@ -64,11 +64,8 @@ module.exports = function(controller,bot){
   controller.hears(['([0-9\u0430-\u044F\u0410-\u042F ]+)'],['direct_message','direct_mention','mention'],function(bot,message){
     var matches = message.text.match(/([0-9\u0430-\u044F\u0410-\u042F ]+)/i);
     var str = matches[1];
-    console.log(str);
     getAccessToken(function (token) {
-      console.log(token)
       translate(token, str, function (translated) {
-        console.log(translated);
         bot.reply(message,'「'+translated+'」って言ってるみたいですよ？');
       });
     });
