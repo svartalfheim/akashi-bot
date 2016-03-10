@@ -16,6 +16,7 @@ function getAccessToken(callback) {
         res.on('data', function (chunk) {
             body += chunk;
         }).on('end', function () {
+            var resData = JSON.parse(body);
             callback(resData.access_token);
         });
     }).on('error', function (err) {
