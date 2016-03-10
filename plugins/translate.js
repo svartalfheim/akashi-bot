@@ -17,6 +17,7 @@ function getAccessToken(callback) {
             body += chunk;
         }).on('end', function () {
             var resData = JSON.parse(body);
+            console.log(resData);
             callback(resData.access_token);
         });
     }).on('error', function (err) {
