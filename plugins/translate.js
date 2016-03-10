@@ -34,13 +34,16 @@ function getAccessToken(callback) {
 }
 
 function translate(token, text, callback) {
-    var options = 'appId=Bearer ' + qs.escape(token) + '&from=ru&to=ja&text=' + qs.escape(text) +
+    var options = 'from=ru&to=ja&text=' + qs.escape(text) +
             '&oncomplete=translated';
     var body = '';
     var req = http.request({
         host: 'api.microsofttranslator.com',
         path: '/V2/Ajax.svc/Translate?' + options,
-        method: 'GET'
+        method: 'GET',
+        headers: {
+            "Authorization": 'Bearer ' + token
+        }
     }, function (res) {
         res.setEncoding('utf8');
         res.on('data', function (chunk) {
