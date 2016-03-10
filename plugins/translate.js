@@ -16,7 +16,6 @@ function getAccessToken(callback) {
         res.on('data', function (chunk) {
             body += chunk;
         }).on('end', function () {
-            var resData = JSON.parse(body);
             callback(resData.access_token);
         });
     }).on('error', function (err) {
@@ -34,7 +33,7 @@ function getAccessToken(callback) {
 }
 
 function translate(token, text, callback) {
-    var options = 'appId=Bearer ' + token + '&from=ru&to=ja&text=' + qs.escape(text) +
+    var options = 'appId=Bearer ' + qs.escape(token) + '&from=ru&to=ja&text=' + qs.escape(text) +
             '&oncomplete=translated';
     var body = '';
     var req = http.request({
