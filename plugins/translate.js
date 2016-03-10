@@ -34,12 +34,12 @@ function getAccessToken(callback) {
 }
 
 function translate(token, text, callback) {
-    var options = 'appId=Bearer ' + token + '&to=en&text=' + text +
+    var options = 'appId=Bearer ' + token + '&from=ru&to=ja&text=' + qs.escape(text) +
             '&oncomplete=translated';
     var body = '';
     var req = http.request({
         host: 'api.microsofttranslator.com',
-        path: '/V2/Ajax.svc/Translate?' + qs.escape(options),
+        path: '/V2/Ajax.svc/Translate?' + options,
         method: 'GET'
     }, function (res) {
         res.setEncoding('utf8');
