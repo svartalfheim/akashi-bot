@@ -5,7 +5,7 @@ var CronJob = require('cron').CronJob;
 var weather = require('../modules/weather');
 var train = require('../modules/train');
 
-module.exports = function(bot){
+module.exports = function(controller,bot){
   new CronJob('0 0 9 * * 1-5', function() {
 
     bot.say({

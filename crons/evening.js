@@ -3,7 +3,7 @@
 var config = require('../config');
 var CronJob = require('cron').CronJob;
 
-module.exports = function(bot){
+module.exports = function(controller,bot){
   new CronJob('0 0 19 * * 1-5', function(){
     bot.say({
       text:"お疲れ様でした！",
