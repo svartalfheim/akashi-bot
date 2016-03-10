@@ -3,7 +3,7 @@
 const config = require('../config');
 const http = require('http');
 const https = require('https');
-const qs = require('queryString');
+const qs = require('querystring');
 
 function getAccessToken(callback) {
     var body = '';
