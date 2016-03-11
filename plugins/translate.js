@@ -49,7 +49,6 @@ function translate(token, text, callback) {
         res.on('data', function (chunk) {
             body += chunk;
         }).on('end', function () {
-            console.log(body);
             eval(body);
         });
     }).on('error', function (err) {
