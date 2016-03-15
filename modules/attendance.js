@@ -16,7 +16,7 @@ module.exports = {
             }else{
               _.forEach(response.members,function(member){
                 if(member.name == 'akashi-bot') return;
-                if(member.id == memberKey && member.online){
+                if(member.id == memberKey && member.presence == "active"){
                   bot.say({
                     text:member.name + '提督が着任されました！本日もよろしくお願いします！',
                     channel:config.CHANNEL_ID.ROOM
