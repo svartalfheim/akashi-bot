@@ -9,16 +9,14 @@ module.exports = {
       if(error){
         console.log(error);
       }else{
-        var json = JSON.parse(response);
-        _.forEach(json.channel.members,function(memberKey){
+        _.forEach(response.channel.members,function(memberKey){
           bot.api.users.list({presence:1},function(error,response){
             if(error){
               console.log(error);
             }else{
-              var json = JSON.parse(response);
               var names = "";
 
-              _.forEach(json.members,function(member){
+              _.forEach(response.members,function(member){
                 if(member.id == memberKey){
                   if(names.length > 0) names +='、'
                   names += member.name + '提督';
