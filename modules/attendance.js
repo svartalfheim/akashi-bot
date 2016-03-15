@@ -14,21 +14,16 @@ module.exports = {
             if(error){
               console.log(error);
             }else{
-              var names = "";
 
+              var names = "";
               _.forEach(response.members,function(member){
-                if(member.id == memberKey){
-                  if(names.length > 0) names +='、'
-                  names += member.name + '提督';
+                if(member.id == memberKey && member.presence == "active"){
+                  bot.say({
+                    text:member.name + '提督が着任されました！本日もよろしくお願いします！',
+                    channel:config.CHANNEL_ID.ROOM
+                  });
                 }
               });
-
-              if(names.length > 0){
-                bot.say({
-                  text:names + 'が着任されました！本日もよろしくお願いします！',
-                  channel:config.CHANNEL_ID.ROOM
-                });
-              }
             }
           });
         });
