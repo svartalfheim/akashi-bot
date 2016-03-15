@@ -16,7 +16,6 @@ module.exports = {
             }else{
               _.forEach(response.members,function(member){
                 if(member.name == 'akashi-bot') return;
-                console.log(member);
                 if(member.id == memberKey && member.presence == "active"){
                   bot.say({
                     text:member.name + '提督が着任されました！本日もよろしくお願いします！',
