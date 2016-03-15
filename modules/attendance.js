@@ -5,7 +5,7 @@ var _ = require("lodash");
 
 module.exports = {
   fetch:function(bot){
-    bot.api.channels.info({},function(error,response){
+    bot.api.channels.info({channel:config.CHANNEL_ID.ROOM},function(error,response){
       if(error){
         console.log(error);
       }else{
