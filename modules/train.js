@@ -11,8 +11,8 @@ module.exports = {
     // @return {lineName:"aaa",state:"bbb"}
     request(url,function(error,response,body){
       if (!error && response.statusCode == 200) {
-        var $ = cheerio.load(body);
-        var trainInfoString = parser($,{decodeEntities: false});
+        var $ = cheerio.load(body,{decodeEntities: false});
+        var trainInfoString = parser($);
 
         bot.say({
           text:"「"+trainInfoString+"」だそうですよ？",
