@@ -48,9 +48,9 @@ module.exports = {
   },
   saySeibuInfo:function(bot){
     this.fetchHtml(bot,
-    'http://www.seibu-group.co.jp/railways/',
+    'http://www.seibu-group.co.jp/railways/unten/unten.asp',
     function($){
-      var text = $("#unkou_info_text").text();
+      var text = $('.paragraphmod001').html().split('<br>')[1];
 
       return text;
     });
