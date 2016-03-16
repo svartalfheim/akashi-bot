@@ -12,10 +12,10 @@ module.exports = {
     request(url,function(error,response,body){
       if (!error && response.statusCode == 200) {
         var $ = cheerio.load(body);
-        var trainInfo = parser($);
+        var trainInfoString = parser($);
 
         bot.say({
-          text:trainInfo.lineName+"は"+trainInfo.state+"みたいですよ？",
+          text:"「"+trainInfoString+"」だそうですよ？",
           channel: config.CHANNEL_ID.ROOM
         });
       }else{
@@ -31,10 +31,7 @@ module.exports = {
         var lineName = $(container).find("th").text();
         var state = $(container).find("img").attr("alt");
 
-        return {
-          lineName:lineName,
-          state:state
-        }
+        return lineName+'は'+state+'です'
       });
   },
   sayTozaiInfo:function(bot){
@@ -46,10 +43,28 @@ module.exports = {
         var state = $(tr).find("p").text();
         state = state.replace(/います。/,'る');
 
-        return {
-          lineName:lineName,
-          state:state
-        }
+        return lineName+'は'+state+'です'
       });
+  },
+  saySeibuInfo:function(bot){
+    this.fetchHtml(bot,
+    'http://www.seibu-group.co.jp/railways/',
+    function($){
+      var text = $("#main2015s_head_news_inner").find("a").text();
+
+      return text;
+    });
+  },
+  sayChuoInfo:function(bot){
+    this.fetchHtml(bot,
+    'http://traininfo.jreast.co.jp/train_info/kanto.aspx',
+    function($){
+      var container = $("#direction_chuo");
+      var tr = $(container).find('tr')[0];
+      var lineName = $(tr).find('th').text();
+      var state = $(tr).find("img").attr("alt");
+
+      return lineName+'は'+state+'です';
+    });
   }
 }
