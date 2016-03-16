@@ -12,7 +12,7 @@ module.exports = {
     request(url,function(error,response,body){
       if (!error && response.statusCode == 200) {
         var $ = cheerio.load(body);
-        var trainInfoString = parser($);
+        var trainInfoString = parser($,{decodeEntities: false});
 
         bot.say({
           text:"「"+trainInfoString+"」だそうですよ？",
@@ -50,7 +50,7 @@ module.exports = {
     this.fetchHtml(bot,
     'http://www.seibu-group.co.jp/railways/unten/unten.asp',
     function($){
-      var text = $('.paragraphmod001').html({decodeEntities: false}).split('<br>')[1];
+      var text = $('.paragraphmod001').html().split('<br>')[1];
 
       return text;
     });
