@@ -50,7 +50,7 @@ module.exports = {
     this.fetchHtml(bot,
     'http://www.seibu-group.co.jp/railways/',
     function($){
-      var text = $("#main2015s_head_news_inner").find("a").text();
+      var text = $("#unkou_info_text").text();
 
       return text;
     });
