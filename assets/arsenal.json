@@ -792,6 +792,60 @@
           "weekdays":[2,3,4,5]
         }
       ]
+    },
+    {
+      "name":"大発動艇",
+			"priority":0,
+      "second_ships":[
+        {
+          "name":"あきつ丸",
+          "weekdays":[0,1,2,3,4,5,6]
+        },
+        {
+          "name":"皐月改二",
+          "weekdays":[0,1,2,3]
+        },
+        {
+          "name":"阿武隈改二",
+          "weekdays":[0,1,5,6]
+        }
+      ]
+    },
+    {
+      "name":"大発動艇(八九式中戦車＆陸戦隊)",
+			"priority":0,
+      "second_ships":[
+        {
+          "name":"あきつ丸",
+          "weekdays":[0,1,5,6]
+        },
+        {
+          "name":"皐月改二",
+          "weekdays":[4,5,6]
+        },
+        {
+          "name":"阿武隈改二",
+          "weekdays":[2,3,4]
+        }
+      ]
+    },
+    {
+      "name":"特二式内火艇",
+			"priority":0,
+      "second_ships":[
+        {
+          "name":"伊58",
+          "weekdays":[0,1,5,6]
+        },
+        {
+          "name":"伊8",
+          "weekdays":[3,4,5,6]
+        },
+        {
+          "name":"伊401",
+          "weekdays":[1,2,3,4]
+        }
+      ]
     }
   ]
 }
