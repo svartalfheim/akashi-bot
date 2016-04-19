@@ -14,6 +14,7 @@ module.exports = function(controller,bot){
     });
 
     train.sayYamanoteInfo(bot);
+    train.saySeibuInfo(bot);
     weather.sayTokyo(bot);
 
   }, null, true, 'Asia/Tokyo');
