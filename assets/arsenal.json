@@ -404,38 +404,6 @@
       ]
     },
     {
-      "name":"零式水上観測機",
-			"priority":0,
-      "second_ships":[
-        {
-          "name":"瑞穂",
-          "weekdays":[0,1,2,3,6]
-        },
-        {
-          "name":"武蔵",
-          "weekdays":[4,5,6]
-        }
-      ]
-    },
-    {
-      "name":"Ro.43水偵",
-			"priority":0,
-      "second_ships":[
-        {
-          "name":"Zara改",
-          "weekdays":[1,2,3,4,5]
-        },
-        {
-          "name":"Italia",
-          "weekdays":[0,6]
-        },
-        {
-          "name":"Roma改",
-          "weekdays":[2,3]
-        }
-      ]
-    },
-    {
       "name":"13号対空電探",
 			"priority":0,
       "second_ships":[
@@ -1034,62 +1002,6 @@
 				{
           "name":"瑞鶴",
           "weekdays":[2,4]
-        }
-      ]
-    },
-		{
-      "name":"試製景雲(艦偵型)",
-			"priority":0,
-      "second_ships":[
-				{
-          "name":"翔鶴改二甲",
-          "weekdays":[0,5,6]
-        },
-				{
-          "name":"瑞鶴改二甲",
-          "weekdays":[0,1,2]
-        }
-      ]
-    },
-		{
-      "name":"試製景雲(艦偵型)",
-			"priority":0,
-      "second_ships":[
-				{
-          "name":"翔鶴改二甲",
-          "weekdays":[0,5,6]
-        },
-				{
-          "name":"瑞鶴改二甲",
-          "weekdays":[0,1,2]
-        }
-      ]
-    },
-		{
-      "name":"試製景雲(艦偵型)",
-			"priority":0,
-      "second_ships":[
-				{
-          "name":"翔鶴改二甲",
-          "weekdays":[0,5,6]
-        },
-				{
-          "name":"瑞鶴改二甲",
-          "weekdays":[0,1,2]
-        }
-      ]
-    },
-		{
-      "name":"試製景雲(艦偵型)",
-			"priority":0,
-      "second_ships":[
-				{
-          "name":"翔鶴改二甲",
-          "weekdays":[0,5,6]
-        },
-				{
-          "name":"瑞鶴改二甲",
-          "weekdays":[0,1,2]
         }
       ]
     },
