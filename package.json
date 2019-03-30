@@ -13,7 +13,7 @@
   "author": "svartalfheim.jp@gmail.com",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^4.17.0",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.8.0"
   },
