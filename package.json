@@ -4,17 +4,22 @@
   "description": "",
   "main": "bot.js",
   "scripts": {
-    "start": "node bot.js"
+    "start": "node bot.js",
+    "lint": "eslint assets crons modules plugins"
   },
   "keywords": [
     "botkit"
   ],
   "author": "svartalfheim.jp@gmail.com",
   "license": "MIT",
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.8.0"
+  },
   "dependencies": {
-    "botkit": "0.0.7",
-    "cheerio": "^0.20.0",
+    "botkit": "0.6.12",
+    "cheerio": "^0.22.0",
     "cron": "^1.1.0",
     "fs": "0.0.2",
     "https": "^1.0.0",
