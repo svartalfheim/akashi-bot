@@ -1,8 +1,9 @@
 'use strict'
 
-var http = require('http');
-var https = require('https');
-var qs = require('querystring');
+const config = require('../config');
+const http = require('http');
+const https = require('https');
+const qs = require('querystring');
 
 function getAccessToken(callback) {
     var body = '';
@@ -61,7 +62,7 @@ function translate(token, text, callback) {
     }
 }
 
-module.exports = function(controller){
+module.exports = function(controller,bot){
   controller.hears(['([0-9\u0430-\u044F\u0410-\u042F ]+)'],['direct_message','direct_mention','mention'],function(bot,message){
     var matches = message.text.match(/([0-9\u0430-\u044F\u0410-\u042F ]+)/i);
     var str = matches[1];
