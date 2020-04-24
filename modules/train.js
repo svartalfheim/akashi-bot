@@ -25,11 +25,11 @@ module.exports = {
   },
   sayYamanoteInfo:function(bot){
     this.fetchHtml(bot,
-      'https://transit.yahoo.co.jp/traininfo/detail/21/0/',
+      'http://traininfo.jreast.co.jp/train_info/kanto.aspx',
       function($){
-        var container = $("#main");
-        var lineName = $(container).find("h1").text();
-        var state = $("#mdServiceStatus dt").text();
+        var container = $("#direction_yamate");
+        var lineName = $(container).find("th").text();
+        var state = $(container).find("img").attr("alt");
 
         return lineName+'は'+state+'です'
       });
