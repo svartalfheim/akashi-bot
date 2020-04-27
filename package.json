@@ -14,7 +14,7 @@
   "devDependencies": {},
   "dependencies": {
     "botkit": "0.0.7",
-    "cheerio": "^0.20.0",
+    "cheerio": "^0.22.0",
     "cron": "^1.1.0",
     "fs": "0.0.2",
     "https": "^1.0.0",
